@@ -1,0 +1,17 @@
+<h2>Your Cart</h2>
+<div id="cart"></div>
+
+<button onclick="pay()">Pay Now</button>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart"));
+let box = document.getElementById("cart");
+
+cart.forEach(i=>{
+  box.innerHTML += `<p>${i.name} - ₹${i.price}</p>`;
+});
+
+function pay(){
+  window.open("https://wa.me/917654891342?text=Order Placed");
+}
+</script>

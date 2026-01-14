@@ -1,25 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html>
+<html b:version='2' class='v2'
+xmlns='http://www.w3.org/1999/xhtml'
+xmlns:b='http://www.google.com/2005/gml/b'
+xmlns:data='http://www.google.com/2005/gml/data'
+xmlns:expr='http://www.google.com/2005/gml/expr'>
+
 <head>
-<title>Lappy Link Store</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lappy Link - Refurbished Laptops</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
 <style>
-body{font-family:Poppins;background:#f5f5f5}
-.product{background:white;padding:15px;margin:15px;border-radius:8px}
+body{margin:0;font-family:Poppins;background:#f5f5f5;color:#222}
+.dark{background:#121212;color:#fff}
+header{background:#111;color:white;padding:15px}
+nav{display:flex;justify-content:space-between;align-items:center}
+nav a{color:white;margin:8px;font-weight:bold}
+.whatsapp{background:#25D366;padding:8px 12px;border-radius:5px}
+
+.slider img{width:100%;border-radius:10px}
+
+.container{max-width:1200px;margin:auto;padding:20px;display:flex;gap:20px}
+.main{flex:3}
+.sidebar{flex:1;background:white;padding:15px;border-radius:8px}
+
+.shop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+.product{background:white;padding:15px;border-radius:8px;text-align:center}
+.product img{width:100%;border-radius:8px}
+
+button{background:#00aaff;color:white;border:none;padding:10px;border-radius:5px;cursor:pointer}
+
+.cart{position:fixed;top:10px;right:10px;background:#00aaff;color:white;padding:10px;border-radius:5px}
+.toggle{position:fixed;bottom:20px;right:20px}
+
+footer{background:#111;color:white;text-align:center;padding:15px}
 </style>
+
+<script>
+let cart=[];
+function addToCart(name,price){
+cart.push({name,price});
+alert(name+" added to cart");
+}
+function checkout(){
+let total=cart.reduce((s,i)=>s+i.price,0);
+window.location.href="upi://pay?pa=8102344096@ibl&am="+total;
+}
+function razorpayPay(){
+window.open("https://rzp.io/l/demo","_blank");
+}
+function darkMode(){
+document.body.classList.toggle("dark");
+}
+</script>
 </head>
 
 <body>
 
-<h1>Lappy Link</h1>
+<div class="cart" onclick="checkout()">🛒 Pay via UPI</div>
+
+<header>
+<nav>
+<div><b>Lappy Link</b></div>
+<div>
+<a href="/">Home</a>
+<a href="#shop">Shop</a>
+<a class="whatsapp" href="https://wa.me/918102344096">WhatsApp</a>
+</div>
+</nav>
+</header>
+
+<div class="slider">
+<img src="https://lappywala.com/wp-content/uploads/2023/05/banner-1.jpg"/>
+<img src="https://lappywala.com/wp-content/uploads/2023/05/banner-2.jpg"/>
+</div>
+
+<div class="container">
+<div class="main">
+
+<h2 id="shop">🛍️ Our Products</h2>
+
+<div class="shop">
 
 <div class="product">
+<img src="https://lappywala.com/wp-content/uploads/2023/06/macbook-air.jpg">
 <h3>MacBook Air M1</h3>
 <p>₹39,999</p>
-<a href="upi://pay?pa=8102344096@ibl&am=39999">Pay UPI</a><br>
-<a href="https://rzp.io/l/demo">Pay Razorpay</a><br>
-<a href="https://wa.me/918102344096">WhatsApp Order</a>
+<button onclick="addToCart('MacBook Air M1',39999)">Add to Cart</button>
+<button onclick="razorpayPay()">Pay Razorpay</button>
 </div>
+
+<div class="product">
+<img src="https://lappywala.com/wp-content/uploads/2023/06/dell-laptop.jpg">
+<h3>Dell Latitude 7470</h3>
+<p>₹12,500</p>
+<button onclick="addToCart('Dell 7470',12500)">Add to Cart</button>
+<button onclick="razorpayPay()">Pay Razorpay</button>
+</div>
+
+</div>
+</div>
+
+<div class="sidebar">
+<h3>Categories</h3>
+<ul>
+<li>Apple</li>
+<li>Dell</li>
+<li>HP</li>
+<li>Lenovo</li>
+<li>Gaming</li>
+<li>Accessories</li>
+</ul>
+
+<h3>Social</h3>
+<a href="#">Facebook</a><br>
+<a href="#">Instagram</a><br>
+<a href="#">YouTube</a>
+
+<h3>Order</h3>
+<a class="whatsapp" href="https://wa.me/918102344096">Chat Now</a>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Lappy Link</p>
+</footer>
+
+<button class="toggle" onclick="darkMode()">🌙</button>
 
 </body>
 </html>

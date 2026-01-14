@@ -1,133 +1,795 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' class='v2'
-xmlns='http://www.w3.org/1999/xhtml'
-xmlns:b='http://www.google.com/2005/gml/b'
-xmlns:data='http://www.google.com/2005/gml/data'
-xmlns:expr='http://www.google.com/2005/gml/expr'>
-
-<head>
-<title>Lappy Link - Refurbished Laptops</title>
-<meta content='width=device-width, initial-scale=1' name='viewport'/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-<style>
-body{margin:0;font-family:Poppins;background:#f5f5f5;color:#222}
-.dark{background:#121212;color:#fff}
-header{background:#111;color:white;padding:15px}
-nav{display:flex;justify-content:space-between;align-items:center}
-nav a{color:white;margin:8px;font-weight:bold}
-.whatsapp{background:#25D366;padding:8px 12px;border-radius:5px}
-
-.slider img{width:100%;border-radius:10px}
-
-.container{max-width:1200px;margin:auto;padding:20px;display:flex;gap:20px}
-.main{flex:3}
-.sidebar{flex:1;background:white;padding:15px;border-radius:8px}
-
-.shop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
-.product{background:white;padding:15px;border-radius:8px;text-align:center}
-.product img{width:100%;border-radius:8px}
-
-button{background:#00aaff;color:white;border:none;padding:10px;border-radius:5px;cursor:pointer}
-
-.cart{position:fixed;top:10px;right:10px;background:#00aaff;color:white;padding:10px;border-radius:5px}
-.toggle{position:fixed;bottom:20px;right:20px}
-
-footer{background:#111;color:white;text-align:center;padding:15px}
-</style>
-
-<script>
-let cart=[];
-function addToCart(name,price){
-cart.push({name,price});
-alert(name+" added to cart");
+<html class="ltr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr">
+  <head>
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport" />
+    <title>
+      Website Title | Website Name
+    </title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta content="#f8f8f8" name="theme-color" />
+    <!-- Windows Phone -->
+    <meta content="#f8f8f8" name="msapplication-navbutton-color" />
+    <meta content="blogger" name="generator" />
+    <link href="https://meradomainnames.blogspot.com/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="https://meradomainnames.blogspot.com/" rel="canonical" />
+    <link rel="alternate" type="application/atom+xml" title="Website Title | Website Name - Atom" href="https://meradomainnames.blogspot.com/feeds/posts/default" />
+    <link rel="alternate" type="application/rss+xml" title="Website Title | Website Name - RSS" href="https://meradomainnames.blogspot.com/feeds/posts/default?alt=rss" />
+    <link rel="service.post" type="application/atom+xml" title="Website Title | Website Name - Atom" href="https://www.blogger.com/feeds/2713297667868627132/posts/default" />
+    <link rel="me" href="https://www.blogger.com/profile/02988170921557561140" />
+    <!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+    <meta content="https://meradomainnames.blogspot.com/" property="og:url" />
+    <meta content="Website Title | Website Name" property="og:title" />
+    <meta content="" property="og:description" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkgnlZxLY0nZQnZtBi9LYIPbpootSXZ8fwbDxgr9JIcfLtA2dbqL38bhz3rrE_q1qJ4d7koW40nGGJGleudYU3bMX_x2q4aoADG0A4NowhyfCtSasTlAqjaAfT_bJPdKOtlgh_6T7HsGtnwS0Y0XYiblEngMDyVN8LMuS-eEzSmprAt5GV7wB2TwYN/w1200-h630-p-k-no-nu/Pressure%20%201.jpg" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1m2-02OLlxYedo8XCXVkIwCT7CniWnoR0Tx9laiUny5UM0QAHRBjRUlPp1Ymzu3en7YzezLgdqWjpdA6oN31f7rfOHgMa6ohjDGAq4aaWb6ai_gz_NmBHNjSdAVphPGtcsLmQDrBnx4F739KpRc0q8UsmzVjmopGtA5HkavX2aVVDCYgzjdmWGscR/w1200-h630-p-k-no-nu/makeup%205.jpg" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaE76vZ0g3UejA64nVgcZI8WcJ7FKLK3ZXXQdy0Lt09qzCP3bD4KqPr1YYNaAqP9eQT0Ur2_Z2q8ai8g4gok9cmpy9jiqHJu4BZ_By4pspj_NzQt-9dsDPfGd6rx3CBWQLvkRznzHEIzJU3SpvvmniJaJH1pTBPYZP6oYJh_5sNrUWYq3s0KVlsRuQ/w1200-h630-p-k-no-nu/purple%20handbag.png" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkPrYvbbOmS6tRlLpQ1lmCOuZziISivqwAxoL86OIvyk9NaNwSwrzKqa6dKNqZ3cuDaEqo2BQDzpvHNgGDTuMe7vcjf-v8pXdJPj4p50zN0-7htMEu1mKCR1GE8xTND-UsA7Up9QL1CEBh2ldI-njTHhYDD5WBxNxKaW8x8GJA36nWmC75jlh9ze97/w1200-h630-p-k-no-nu/makeup%20palette.png" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgz8Iq1lKQwJsGdY3E54dpdHpoYtLTrouBDE2-QWJXXWQtVT9OqZZkBJixt8Cfotekn-qL_ynI6CnTyWUw0xQXoYcRAVFvonUMN8mzrhuMKdX4E_jg3IBTn1L18rS57BHF55myGI8lD77lwhQXazEVm6_uYypq1GIhFjFZSUYbR8CK9xgKi-ErJxrDw/w1200-h630-p-k-no-nu/sofa%204.jpg" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2HQE1RojEsOUhdbtO9_-VJP0TzFCjHa_jIyxWdI5jFYcvHW9hvxm0e-U3asiZBGJzsnLLsYPe_Cxh6K1r3-i-eMWBdvrEYq7oVVxoEd6zXyNee6bYvrnyJVbT8g4U3uVftJMW_tAJ-HQPH37aafGEFA2-OzqL9QueQ56xNsI4dUDVDNG5SAFU46RB/w1200-h630-p-k-no-nu/coffee%20maker%202.png" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzDwkVc5TkHX-xV2QhI5AUd8SyH4FvGCAz93J3CDAbLy3mno4_xLLJfl5R7MQWhbUwYeUGjJKfB407KdBMkiePa9RpUohKxPSkLd3ERaurVQwb8c1o_6NYT1U54Pvh4YupsuR_Tkd1d1va80W_pM6PLLLOLEO09pkbR9zRUPsAwsvnZnw4ovBB0CKY/w1200-h630-p-k-no-nu/pressure%202.jpg" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht_zEK-Wzi6n0A7N-zlkdXT_ZvtSR8K9ZUewobnH4SizO5Unj9uoyccVtNAmC_6nf_vqb-VPCWqwc_dTvETFXtT_KbZDXHwwVOfAThX31m3HqSH3XTiXQfYR6mneAsrh9QcEgOS7fX-mSGfIJiy269UJ-0hUNSw6XVk_IpkH5iuaFxk74cOb_4i6FE/w1200-h630-p-k-no-nu/sofa%201.jpg" property="og:image" />
+    <meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_tD2s4GBtVia9DbQ-Kr-Dxm_6gNIgkWRa5i-o75X012sIrCHQshC2umRHnchPSrPE0Uc_EbqhiwGeLi0tGuX6NtMuojLXzGYzeoI_7q014hmyOJJ__qpBHx-JtWBe-9rlEHV3OBFTwy5F62br_Hp2sjSPJYWtxZf4_pJmTZP4B1PVWV55v5j7249T/w1200-h630-p-k-no-nu/smartwatch%201.jpg" property="og:image" />
+    <script type="application/ld+json">
+      {&#34;@context&#34;:&#34;http://schema.org&#34;,&#34;@type&#34;:&#34;WebSite&#34;,&#34;name&#34;:&#34;Website Title | Website Name&#34;,&#34;url&#34;:&#34;https://meradomainnames.blogspot.com/&#34;,&#34;potentialAction&#34;:{&#34;@type&#34;:&#34;SearchAction&#34;,&#34;target&#34;:&#34;https://meradomainnames.blogspot.com/search?q={search_term_string}&#34;,&#34;query-input&#34;:&#34;required name=search_term_string&#34;}}
+    </script>
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lato:400,400i,700,700i" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Template Style CSS -->
+    <style type="text/css">
+      @font-face{font-family:&#39;Lato&#39;;font-style:normal;font-weight:400;font-display:swap;src:url(//fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wWw.ttf)format(&#39;truetype&#39;);}
+    </style>
+    <style id="page-skin-1" type="text/css">
+      &lt;!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:        SoraShop
+License:     Free Version
+Version:     4.0
+Author:      Sora Templates
+Author Url:  https://www.soratemplates.com/
+----------------------------------------------- */
+/*-- Reset CSS --*/
+.CSS_LIGHTBOX{z-index:999999!important}.CSS_LIGHTBOX_ATTRIBUTION_INDEX_CONTAINER .CSS_HCONT_CHILDREN_HOLDER &gt; .CSS_LAYOUT_COMPONENT.CSS_HCONT_CHILD:first-child &gt; .CSS_LAYOUT_COMPONENT{opacity:0} a,abbr,acronym,address,applet,b,big,blockquote,body,caption,center,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,kbd,label,legend,li,object,p,pre,q,s,samp,small,span,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul,var{
+padding:0;
+border:0;
+outline:0;
+vertical-align:baseline;
+background:0 0;
+text-decoration:none
 }
-function checkout(){
-let total=cart.reduce((s,i)=>s+i.price,0);
-window.location.href="upi://pay?pa=8102344096@ibl&am="+total;
+html {
+overflow-x: hidden;
 }
-function razorpayPay(){
-window.open("https://rzp.io/l/demo","_blank");
+#google_translate_element { clear: both; }.thread-expanded .thread-count a { display: none; }.comments .continue { display: none!important; }
+.widget-content, .grid-posts {
+clear: both;
 }
-function darkMode(){
-document.body.classList.toggle("dark");
+form,textarea,input,button{
+-webkit-appearance:none;
+-moz-appearance:none;
+appearance:none;
+border-radius:0
 }
-</script>
-</head>
-
-<body>
-
-<div class="cart" onclick="checkout()">🛒 Pay via UPI</div>
-
-<header>
-<nav>
-<div><b>Lappy Link</b></div>
-<div>
-<a href="/">Home</a>
-<a href="#shop">Shop</a>
-<a class="whatsapp" href="https://wa.me/918102344096">WhatsApp</a>
-</div>
-</nav>
-</header>
-
-<div class="slider">
-<img src="https://lappywala.com/wp-content/uploads/2023/05/banner-1.jpg"/>
-<img src="https://lappywala.com/wp-content/uploads/2023/05/banner-2.jpg"/>
-</div>
-
-<div class="container">
-<div class="main">
-
-<h2 id="shop">🛍️ Our Products</h2>
-
-<div class="shop">
-
-<div class="product">
-<img src="https://lappywala.com/wp-content/uploads/2023/06/macbook-air.jpg">
-<h3>MacBook Air M1</h3>
-<p>₹39,999</p>
-<button onclick="addToCart('MacBook Air M1',39999)">Add to Cart</button>
-<button onclick="razorpayPay()">Pay Razorpay</button>
-</div>
-
-<div class="product">
-<img src="https://lappywala.com/wp-content/uploads/2023/06/dell-laptop.jpg">
-<h3>Dell Latitude 7470</h3>
-<p>₹12,500</p>
-<button onclick="addToCart('Dell 7470',12500)">Add to Cart</button>
-<button onclick="razorpayPay()">Pay Razorpay</button>
-</div>
-
-</div>
-</div>
-
-<div class="sidebar">
-<h3>Categories</h3>
-<ul>
-<li>Apple</li>
-<li>Dell</li>
-<li>HP</li>
-<li>Lenovo</li>
-<li>Gaming</li>
-<li>Accessories</li>
-</ul>
-
-<h3>Social</h3>
-<a href="#">Facebook</a><br>
-<a href="#">Instagram</a><br>
-<a href="#">YouTube</a>
-
-<h3>Order</h3>
-<a class="whatsapp" href="https://wa.me/918102344096">Chat Now</a>
-</div>
-</div>
-
-<footer>
-<p>© 2026 Lappy Link</p>
-</footer>
-
-<button class="toggle" onclick="darkMode()">🌙</button>
-
-</body>
-</html>
+dl,ul{
+list-style-position:inside;
+font-weight:400;
+list-style:none
+}
+ul li{
+list-style:none
+}
+caption,th{
+text-align:center
+}
+img{
+position: relative;
+max-width: 100%;
+height: auto;
+}
+a,a:visited{
+text-decoration:none
+}
+.clearfix{
+clear:both
+}
+.section,.widget,.widget ul{
+margin:0;
+padding:0
+}
+a{
+color:#2874f0
+}
+a:visited{
+color:red;
+}
+a img{
+border:0
+}
+abbr{
+text-decoration:none
+}
+.CSS_LIGHTBOX{
+z-index:999999!important
+}
+.separator a{
+clear:none!important;
+float:none!important;
+margin-left:0!important;
+margin-right:0!important
+}
+#navbar-iframe,.widget-item-control,a.quickedit,.home-link,.feed-links{
+display:none!important
+}
+.center{
+display:table;
+margin:0 auto;
+position:relative
+}
+.widget &gt; h2,.widget &gt; h3{
+display:none
+}
+::selection{
+color:#fff;
+background:#2874f0
+}
+/*-- Body Content CSS --*/
+body{
+background:#f8f8f8 url() repeat fixed top left;
+background-color:#f8f8f8;
+font-family:&#39;Lato&#39;,sans-serif;
+font-size:14px;
+font-weight:400;
+color:#656565;
+word-wrap:break-word;
+margin:0;
+padding:0
+}
+#outer-wrapper{
+margin:0 auto;
+background-color:#fff;
+box-shadow:0 0 5px rgba(0,0,0,.1)
+}
+.row{
+width:1058px
+}
+#content-wrapper{
+margin:30px auto 0;
+overflow:hidden
+}
+#main-wrapper{
+float:left;
+overflow:hidden;
+width:calc(100% - 330px);
+box-sizing:border-box;
+word-wrap:break-word;
+padding:0;
+margin:0
+}
+#sidebar-wrapper{
+float:right;
+overflow:hidden;
+width:300px;
+box-sizing:border-box;
+word-wrap:break-word;
+padding:0
+}
+.post-image-wrap{
+position:relative;
+display:block
+}
+.comments .avatar-image-container{
+background-color:rgba(155,155,155,0.07);
+color:transparent!important
+}
+.post-thumb{
+display:block;
+position:relative;
+width:100%;
+height:auto;
+object-fit:cover;
+object-position: top;
+z-index:1;
+opacity: 0;
+transition:opacity .17s ease,transform .17s ease
+}
+.post-thumb.lazy-yard {
+opacity: 1;
+}
+.post-image-link:hover .post-thumb,.post-image-wrap:hover .post-image-link .post-thumb,.hot-item-inner:hover .post-image-link .post-thumb{
+opacity:.9
+}
+.post-title a{
+display: block;
+color: inherit;
+transition: color .17s;
+}
+.social a:before,.payment a:before{
+display:inline-block;
+font-family:FontAwesome;
+font-style:normal;
+font-weight:400
+}
+.social .blogger a:before{
+content:&#34;\f37d&#34;
+}
+.social .facebook a:before{
+content:&#34;\f09a&#34;
+}
+.social .twitter a:before{
+content:&#34;\f099&#34;
+}
+.social .gplus a:before{
+content:&#34;\f0d5&#34;
+}
+.social .rss a:before{
+content:&#34;\f09e&#34;
+}
+.social .youtube a:before{
+content:&#34;\f167&#34;
+}
+.social .skype a:before{
+content:&#34;\f17e&#34;
+}
+.social .stumbleupon a:before{
+content:&#34;\f1a4&#34;
+}
+.social .tumblr a:before{
+content:&#34;\f173&#34;
+}
+.social .vk a:before{
+content:&#34;\f189&#34;
+}
+.social .stack-overflow a:before{
+content:&#34;\f16c&#34;
+}
+.social .github a:before{
+content:&#34;\f09b&#34;
+}
+.social .linkedin a:before{
+content:&#34;\f0e1&#34;
+}
+.social .dribbble a:before{
+content:&#34;\f17d&#34;
+}
+.social .soundcloud a:before{
+content:&#34;\f1be&#34;
+}
+.social .behance a:before{
+content:&#34;\f1b4&#34;
+}
+.social .digg a:before{
+content:&#34;\f1a6&#34;
+}
+.social .instagram a:before{
+content:&#34;\f16d&#34;
+}
+.social .pinterest a:before{
+content:&#34;\f0d2&#34;
+}
+.social .twitch a:before{
+content:&#34;\f1e8&#34;
+}
+.social .delicious a:before{
+content:&#34;\f1a5&#34;
+}
+.social .codepen a:before{
+content:&#34;\f1cb&#34;
+}
+.social .reddit a:before{
+content:&#34;\f1a1&#34;
+}
+.social .whatsapp a:before{
+content:&#34;\f232&#34;
+}
+.social .snapchat a:before{
+content:&#34;\f2ac&#34;
+}
+.social .email a:before{
+content:&#34;\f0e0&#34;
+}
+.social .external-link a:before{
+content:&#34;\f35d&#34;
+}
+.social-color .blogger a{
+background-color:#ff5722
+}
+.social-color .facebook a{
+background-color:#3b5999
+}
+.social-color .twitter a{
+background-color:#00acee
+}
+.social-color .gplus a{
+background-color:#db4a39
+}
+.social-color .youtube a{
+background-color:#f50000
+}
+.social-color .instagram a{
+background:linear-gradient(15deg,#ffb13d,#dd277b,#4d5ed4)
+}
+.social-color .pinterest a{
+background-color:#ca2127
+}
+.social-color .dribbble a{
+background-color:#ea4c89
+}
+.social-color .linkedin a{
+background-color:#0077b5
+}
+.social-color .tumblr a{
+background-color:#365069
+}
+.social-color .twitch a{
+background-color:#6441a5
+}
+.social-color .rss a{
+background-color:#ffc200
+}
+.social-color .skype a{
+background-color:#00aff0
+}
+.social-color .stumbleupon a{
+background-color:#eb4823
+}
+.social-color .vk a{
+background-color:#4a76a8
+}
+.social-color .stack-overflow a{
+background-color:#f48024
+}
+.social-color .github a{
+background-color:#24292e
+}
+.social-color .soundcloud a{
+background:linear-gradient(#ff7400,#ff3400)
+}
+.social-color .behance a{
+background-color:#191919
+}
+.social-color .digg a{
+background-color:#1b1a19
+}
+.social-color .delicious a{
+background-color:#0076e8
+}
+.social-color .codepen a{
+background-color:#000
+}
+.social-color .reddit a{
+background-color:#ff4500
+}
+.social-color .whatsapp a{
+background-color:#3fbb50
+}
+.social-color .snapchat a{
+background-color:#ffe700
+}
+.social-color .email a{
+background-color:#888
+}
+.social-color .external-link a{
+background-color:#111111
+}
+.payment .visa a:before{
+content:&#34;\f1f0&#34;
+}
+.payment .master a:before{
+content:&#34;\f1f1&#34;
+}
+.payment .amex a:before{
+content:&#34;\f1f3&#34;
+}
+.payment .diners a:before{
+content:&#34;\f24c&#34;
+}
+.payment .discover a:before{
+content:&#34;\f1f2&#34;
+}
+.payment .paypal a:before{
+content:&#34;\f1f4&#34;
+}
+.payment .jcb a:before{
+content:&#34;\f24b&#34;
+}
+#header-wrap{
+position:relative;
+margin:0
+}
+.header-header{
+background-color:#ffffff;
+width:100%;
+height:70px;
+position:relative;
+padding:0
+}
+.header-header .container{
+position:relative;
+margin:0 auto;
+padding:0
+}
+.header-logo{
+position:relative;
+float:left;
+width:auto;
+max-width:280px;
+max-height:40px;
+margin:0;
+padding:15px 0
+}
+.header-logo .header-image-wrapper{
+display:block
+}
+.header-logo img{
+max-width:100%;
+max-height:40px;
+margin:0
+}
+.header-logo h1{
+color:#000000;
+font-size:20px;
+line-height:40px;
+margin:0
+}
+.header-logo p{
+font-size:12px;
+margin:5px 0 0
+}
+.header-right{
+position:relative;
+float:right;
+display:flex;
+flex-wrap:wrap;
+margin:18px 0 0
+}
+.top-bar-social{
+position:relative;
+float:left;
+margin: 0 25px 0 0;
+display:block
+}
+.top-bar-social .widget &gt; .widget-title{
+display:none
+}
+.top-bar-social ul &gt; li{
+float:left;
+display:inline-block
+}
+.top-bar-social ul &gt; li &gt; a{
+line-height:34px;
+display:block;
+color:#ffffff;
+text-decoration:none;
+font-size:14px;
+text-align:center;
+padding:0 7px;
+margin:0 0 0 10px;
+transition:color .17s
+}
+.top-bar-social ul &gt; li:last-child &gt; a{
+padding:0 0 0 7px
+}
+.top-bar-social ul &gt; li:hover &gt; a{
+color:#ffc000
+}
+#right-menu{
+float:right;
+margin:0 25px 0 0
+}
+.right-menu ul li{
+float:left;
+margin:0 0 0 10px
+}
+.right-menu ul li a{
+display:block;
+font-size:13px;
+color:#ffffff;
+line-height:34px;
+padding:0 5px;
+transition:opacity .17s ease
+}
+.right-menu ul li a .fa {
+font-size: 14px;
+margin-right:3px;
+}
+.right-menu ul li a:hover{
+opacity:.7
+}
+.header-menu{
+position:relative;
+float:left;
+width:100%;
+height:42px;
+background-color:#172337;
+z-index:10;
+font-size:13px;
+margin:0
+}
+.header-menu .container{
+position:relative;
+margin:0 auto;
+padding:0
+}
+#main-menu .widget,#main-menu .widget &gt; .widget-title{
+display:none
+}
+#main-menu .show-menu{
+display:block
+}
+#main-menu{
+position:relative;
+height:42px;
+z-index:15
+}
+#main-menu ul &gt; li{
+float:left;
+position:relative;
+margin:0;
+padding:0;
+transition:background .17s
+}
+#main-menu ul &gt; li &gt; a{
+position:relative;
+color:#ffffff;
+font-size:14px;
+font-weight:700;
+line-height:42px;
+display:inline-block;
+margin:0;
+padding:0 13px;
+transition:color .17s ease
+}
+#main-menu ul#main-menu-nav &gt; li:first-child &gt; a{
+padding:0 13px 0 0
+}
+#main-menu ul#main-menu-nav &gt; li &gt; a{
+text-transform:uppercase
+}
+#main-menu ul &gt; li:hover &gt; a{
+color:#fff
+}
+#main-menu ul &gt; li &gt; ul{
+position:absolute;
+float:left;
+left:0;
+top:42px;
+width:180px;
+background-color:#fff;
+z-index:99999;
+margin:0;
+padding:0;
+border-bottom:2px solid #172337;
+box-shadow:0 3px 5px rgba(0,0,0,0.2);
+visibility:hidden;
+opacity:0
+}
+#main-menu ul &gt; li &gt; ul &gt; li &gt; ul{
+position:absolute;
+float:left;
+top:0;
+left:100%;
+margin:0
+}
+#main-menu ul &gt; li &gt; ul &gt; li{
+display:block;
+float:none;
+position:relative;
+transition:all .17s ease
+}
+#main-menu ul &gt; li &gt; ul &gt; li a{
+display:block;
+height:36px;
+font-size:13px;
+color:#111111;
+font-weight:700;
+line-height:36px;
+box-sizing:border-box;
+margin:0;
+padding:0 15px;
+border-bottom:1px solid rgba(0,0,0,0.1);
+transition:all .17s ease
+}
+#main-menu ul &gt; li &gt; ul &gt; li:hover &gt; a{
+color:#2874f0
+}
+#main-menu ul &gt; li &gt; ul &gt; li:last-child a{
+border-bottom:0
+}
+#main-menu ul &gt; li.has-sub &gt; a:after{
+content:&#39;\f107&#39;;
+float:right;
+font-family:FontAwesome;
+font-size:14px;
+font-weight:400;
+margin:0 0 0 3px
+}
+#main-menu ul &gt; li &gt; ul &gt; li.has-sub &gt; a:after{
+content:&#39;\f105&#39;;
+float:right;
+margin:0
+}
+#main-menu .mega-menu{
+position:static!important
+}
+#main-menu .mega-menu &gt; ul{
+width:100%;
+box-sizing:border-box;
+height: 0;
+padding: 0;
+}
+#main-menu .mega-menu &gt; ul.mega-menu-inner{
+overflow:hidden
+}
+#main-menu ul &gt; li:hover &gt; ul,#main-menu ul &gt; li &gt; ul &gt; li:hover &gt; ul{
+visibility:visible;
+opacity:1
+}
+#main-menu ul ul{
+transition:all .17s ease
+}
+.mega-menu-inner .mega-item{
+float:left;
+width:20%;
+box-sizing:border-box;
+padding:0 10px
+}
+.mega-menu-inner .mega-content{
+position:relative;
+width:100%;
+overflow:hidden;
+padding:0
+}
+#main-menu .mega-content .post-image-wrap{
+width:100%;
+height:190px;
+overflow:hidden
+}
+.mega-content .post-image-link{
+width:100%;
+height:100%;
+z-index:1;
+display:block;
+position:relative;
+overflow:hidden
+}
+.post-title{color:inherit; font-size:18px; font-family:Noto Sans, sans-serif}
+.mega-content .post-title{
+position:relative;
+font-size:14px;
+font-weight:700;
+text-transform:uppercase;
+margin:10px 0 5px
+}
+.carousel-outer-wrap .container .mega-content .post-title{
+font-size: 16px;
+font-weight: 700;
+text-transform: uppercase;
+text-decoration: none;
+margin: 0 0 8px;
+}
+.mega-content .post-title a{
+display:block;
+color:#111111;
+transition:color .17s
+}
+.mega-content:hover .post-title a{
+color:#2874f0
+}
+.mega-buy-now {
+float: left;
+width: 100%;
+display: block;
+background-color: #111111;
+height: 30px;
+font-size: 14px;
+color: #fff;
+font-weight: 700;
+line-height: 30px;
+text-align: center;
+margin: 10px 0 0;
+transition: background .17s ease;
+}
+.mega-buy-now:before {
+content: &#34;\f217&#34;;
+font-weight: 400;
+font-family: FontAwesome;
+margin: 0 5px 0 0;
+}
+.sidebar .widget .mega-buy-now, .footer .widget .mega-buy-now {
+display:none;
+}
+.meta-price{
+color:#23A215;
+font-size:12px;
+font-weight:bold
+}
+.no-posts{
+float:left;
+width:100%;
+height:100px;
+line-height:100px;
+text-align:center
+}
+.mega-menu .no-posts{
+line-height:60px;
+color:#111111
+}
+#main-menu .mega-menu &gt; ul.mega-widget,#main-menu .mega-menu &gt; ul.complex-tabs {
+overflow: hidden;
+}
+#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab {
+position: relative;
+float: left;
+width: 20%;
+box-sizing: border-box;
+padding: 20px 0;
+margin: -20px 0 0 -10px;
+}
+#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab:before {
+content: &#39;&#39;;
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100vh;
+background-color: rgba(0,0,0,0.03);
+display: block;
+border-right: 1px solid #ebebeb;
+border-left: 0 solid #ebebeb;
+}
+#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab &gt; li {
+width: 100%;
+border-top: 1px solid transparent;
+border-bottom: 1px solid transparent;
+margin: -1px 0 0;
+transition: 0;
+}
+#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab &gt; li.active,#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab &gt; li:hover {
+background-color: #fff;
+border-top: 1px solid #ebebeb;
+border-bottom: 1px solid #ebebeb;
+}
+#main-menu ul &gt; li &gt; ul.complex-tabs &gt; ul.select-tab &gt; li &gt; a {
+text-transform:uppercase;
+display: block;
+font-size: 13px;
+font-weight: 400;
+color: #2874f0;
+line-height: 32px;
+letter-spacing: 0;
+padding: 0 15px 0 19px;
+margin: 0 -1px 0 0;
+border: 0;
+transition: color .25s;
+}
+#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab &gt; li.active &gt; a {
+color: #2874f0;
+}
+#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab &gt; li.active &gt; a:after {
+content: &#39;\f105&#39;;
+font-family: FontAwesome;
+font-weight: 900;
+float: right;
+margin: 0;
+}
+#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab &gt; li.active &gt; a,#main-menu .mega-menu &gt; ul.complex-tabs &gt; ul.select-tab &gt; li:hover &gt; a {
+color: #2874f0;
+border-right: 1px solid #fff;
+}
+#main-menu ul &gt; li:hover &gt; ul,#main-menu ul &gt; li &gt; ul &gt; li:hover &gt; ul {
+visibility: visible;
+opacity: 1;
+-webkit-backface-visibility: hidden;
+-webkit-transform: translate(0);
+-moz-transform: translate(0);
+transform: translate(0);
+}
+#main-menu ul &gt; li.mega-menu:hover &gt; ul {
+height:auto;
+padding:20px 10px
+}
+#main-menu ul ul {
+      

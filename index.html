@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lappy Link - Online Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">Lappy Link</div>
+  <input type="text" id="search" placeholder="Search products..." />
+  <div class="icons">
+    <span onclick="toggleDark()">🌙</span>
+    <span onclick="showWishlist()">❤️</span>
+    <span onclick="showCart()">🛒</span>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="slider">
+  <div class="slide active">Best Laptop Deals</div>
+  <div class="slide">Gaming Laptops</div>
+  <div class="slide">Office Essentials</div>
+</section>
+
+<!-- FILTER -->
+<section class="filters">
+  <select onchange="filterCategory(this.value)">
+    <option value="All">All Categories</option>
+    <option value="Laptops">Laptops</option>
+    <option value="Accessories">Accessories</option>
+  </select>
+
+  <select onchange="filterPrice(this.value)">
+    <option value="All">All Prices</option>
+    <option value="20000">Under 20k</option>
+    <option value="50000">Under 50k</option>
+  </select>
+</section>
+
+<section class="products"></section>
+
+<!-- CART -->
+<div id="cartModal" class="modal">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <button onclick="checkout()">Order via WhatsApp</button>
+  <button onclick="closeCart()">Close</button>
+</div>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/917654891342" target="_blank">💬</a>
+
+<footer>
+  <p>Contact: 7654891342</p>
+  <p>Follow us: Facebook | Instagram | YouTube</p>
+</footer>
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
